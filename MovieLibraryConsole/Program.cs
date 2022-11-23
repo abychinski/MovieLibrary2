@@ -42,21 +42,7 @@ namespace MovieLibraryConsole
                     System.Console.WriteLine($"({movie.Id}) {movie.Title}");
                 }
             }
-            // Crud - CREATE
-            // System.Console.WriteLine("Enter NEW Occupation Name: ");
-            // var occ2 = Console.ReadLine();
-
-            // using (var db = new MovieContext())
-            // {
-            //     var occupation = new Occupation() {
-            //         Name = occ2
-            //     };
-            //     db.Occupations.Add(occupation);
-            //     db.SaveChanges();
-
-            //     var newOccupation = db.Occupations.FirstOrDefault(x => x.Name == occ2);
-            //     System.Console.WriteLine($"({newOccupation.Id}) {newOccupation.Name}");
-            // }
+           
             else if (choice == "3")
             {
                 System.Console.WriteLine("Enter Movie Name to Update: ");
@@ -77,24 +63,7 @@ namespace MovieLibraryConsole
 
                 }
             }
-            // crUd - UPDATE
-            // System.Console.WriteLine("Enter Occupation Name to Update: ");
-            // var occ3 = Console.ReadLine();
-
-            // System.Console.WriteLine("Enter Updated Occupation Name: ");
-            // var occUpdate = Console.ReadLine();
-
-            // using (var db = new MovieContext())
-            // {
-            //     var updateOccupation = db.Occupations.FirstOrDefault(x => x.Name == occ3);
-            //     System.Console.WriteLine($"({updateOccupation.Id}) {updateOccupation.Name}");
-
-            //     updateOccupation.Name = occUpdate;
-
-            //     db.Occupations.Update(updateOccupation);
-            //     db.SaveChanges();
-
-            // }
+           
             else if (choice == "4")
             {
                 System.Console.WriteLine("Enter Movie Name to Delete: ");
@@ -105,7 +74,7 @@ namespace MovieLibraryConsole
                     var deleteMovie = db.Movies.FirstOrDefault(x => x.Title == moviedel);
                     System.Console.WriteLine($"({deleteMovie.Id}) {deleteMovie.Title}");
 
-                    // verify exists first
+                  
                     db.Movies.Remove(deleteMovie);
                     db.SaveChanges();
                 }
@@ -118,26 +87,7 @@ namespace MovieLibraryConsole
                 }
 
             }
-            // cruD - DELETE
-            // System.Console.WriteLine("Enter Occupation Name to Delete: ");
-            // var occ4 = Console.ReadLine();
-
-            // using (var db = new MovieContext())
-            // {
-            //     var deleteOccupation = db.Occupations.FirstOrDefault(x => x.Name == occ4);
-            //     System.Console.WriteLine($"({deleteOccupation.Id}) {deleteOccupation.Name}");
-
-            //     // verify exists first
-            //     db.Occupations.Remove(deleteOccupation);
-            //     db.SaveChanges();
-            // }
-            //var context = new MovieContext();
-            //var movies = context.Movies;
-
-            //foreach (var movie in movies)
-            //{
-            //    Console.WriteLine($"Movie {movie.Title}");
-            //}
+           
         }
     }
 }
