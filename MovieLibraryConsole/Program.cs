@@ -1,15 +1,18 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using MovieLibraryEntities.Context;
+using MovieLibraryEntities.Dao;
 using MovieLibraryEntities.Models;
 
 namespace MovieLibraryConsole
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             var choice = "";
-            Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie \n(4) Delete Movie");
+            Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie \n(4) Delete Movie \n(5) Show All Movies");
             choice = Console.ReadLine();
 
 
@@ -20,8 +23,9 @@ namespace MovieLibraryConsole
 
                 using (var db = new MovieContext())
                 {
+                   
                     var movie = db.Movies.FirstOrDefault(x => x.Title == mov);
-                    System.Console.WriteLine($"({movie.Id}) {movie.Title}");
+                    System.Console.WriteLine($"({movie.Id}) {movie.Title} {movie.MovieGenres}");
                 }
             }
             else if (choice == "2")
@@ -86,8 +90,26 @@ namespace MovieLibraryConsole
                     Console.WriteLine($"Movie {movie.Title}");
                 }
 
+               
             }
-           
+            else if (choice == "5")
+            {
+                using (var db = new MovieContext())
+                {
+                    var context = new MovieContext();
+                    var movies = context.Movies;
+
+                    foreach (var movie in movies)
+                    {
+                        Console.WriteLine($"{movie.Id} {movie.Title} {movie.MovieGenres}");
+                    }
+                }
+                  
+
+
+            }
+
+
         }
     }
 }
