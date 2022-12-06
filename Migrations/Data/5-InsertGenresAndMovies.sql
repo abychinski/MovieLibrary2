@@ -2887,7 +2887,7 @@ INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2885,1678,8);
 INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2886,1679,14);
 INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2887,1679,16);
 INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2888,1680,8);
-INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2889,1680,14);
-INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2890,1681,5);
-INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2891,1682,8);
+INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2889,1693,14);
+INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2890,1693,5);
+INSERT INTO "moviegenres" (id, movieid, genreid) VALUES (2891,1693,8);
 SET IDENTITY_INSERT moviegenres OFF
