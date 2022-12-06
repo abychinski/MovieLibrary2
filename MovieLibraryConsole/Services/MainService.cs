@@ -20,7 +20,7 @@ namespace MovieLibraryConsole.Services
             string choice;
             do
             {
-                Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie \n(4) Delete Movie \n(5) Show All Movies \n(6) Add New User \n(7) Exit");
+                Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie Name \n(4) Delete Movie \n(5) Show All Movies \n(6) Add New User \n(7) Exit");
                 choice = Console.ReadLine();
 
                 if (choice == "1")
