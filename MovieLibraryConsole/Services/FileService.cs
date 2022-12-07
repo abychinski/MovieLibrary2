@@ -52,6 +52,11 @@ namespace MovieLibraryConsole.Services
         {
             System.Console.WriteLine("Enter NEW Movie Name: ");
             var newmov = Console.ReadLine();
+
+            //System.Console.WriteLine("Enter the release date using mm/dd/yyy format:");
+            //var movdate = Console.ReadLine();
+            var movdate2 = DateTime.Now;
+            DateTime.TryParse(newmov, out movdate2);
             //_logger.LogInformation("Adding new movie");
 
             using (var db = new MovieContext())
@@ -59,12 +64,14 @@ namespace MovieLibraryConsole.Services
                 var movie = new Movie()
                 {
                     Title = newmov
+                   // ReleaseDate = movdate;
+
                 };
                 db.Movies.Add(movie);
                 db.SaveChanges();
 
                 var newMovie = db.Movies.FirstOrDefault(x => x.Title == newmov);
-                System.Console.WriteLine($"({movie.Id}) {movie.Title}");
+                System.Console.WriteLine($"({movie.Id}) {movie.Title} {movie.ReleaseDate}");
             }
 
 
@@ -98,7 +105,7 @@ namespace MovieLibraryConsole.Services
             using (var db = new MovieContext())
             {
                 var deleteMovie = db.Movies.FirstOrDefault(x => x.Title == moviedel);
-                System.Console.WriteLine($"({deleteMovie.Id}) {deleteMovie.Title}");
+                System.Console.WriteLine($"Deleted: ({deleteMovie.Id}) {deleteMovie.Title}");
 
 
                 db.Movies.Remove(deleteMovie);
@@ -107,10 +114,10 @@ namespace MovieLibraryConsole.Services
             var context = new MovieContext();
             var movies = context.Movies;
 
-            foreach (var movie in movies)
-            {
-                Console.WriteLine($"Movie {movie.Title}");
-            }
+            //foreach (var movie in movies)
+            //{
+            //    Console.WriteLine($"Movie {movie.Title}");
+            //}
         }
         public void ShowMovies()
         {
