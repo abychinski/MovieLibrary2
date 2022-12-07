@@ -20,7 +20,8 @@ namespace MovieLibraryConsole.Services
             string choice;
             do
             {
-                Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie Name \n(4) Delete Movie \n(5) Show All Movies \n(6) Add New User \n(7) Exit");
+                Console.WriteLine("(1) Search Movie \n(2) Add Movie \n(3) Update Movie Name \n(4) Delete Movie \n(5) Show All Movies \n(6) Add New User" +
+                    "\n(7) Rate Movie for User \n(8) Exit");
                 choice = Console.ReadLine();
 
                 if (choice == "1")
@@ -48,12 +49,16 @@ namespace MovieLibraryConsole.Services
                 {
                     _fileservice.AddUser();
                 }
+                else if (choice == "7")
+                {
+                    _fileservice.RateMovie();
+                }
                 //else
                 //{
                 //    Console.WriteLine("Make a correct selection");
                 //}
 
-            } while (choice != "7");
+            } while (choice != "8");
 
         }
     }

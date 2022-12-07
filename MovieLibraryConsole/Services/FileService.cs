@@ -1,13 +1,9 @@
-﻿using Castle.Core.Logging;
+﻿
 using MovieLibraryEntities.Context;
 using MovieLibraryEntities.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+
+
+
 
 
 
@@ -207,8 +203,28 @@ namespace MovieLibraryConsole.Services
 
                 context.Users.Add(user);
                 context.SaveChanges();
+                Console.WriteLine($"Added user ID: {user.Id}");
 
             }
+        }
+        public void RateMovie()
+        {
+            UserMovie userMovie = new UserMovie();
+            using (var context = new MovieContext())
+            {
+                //Console.WriteLine("What movie do you want to rate?");
+                //var searchmovie = Console.ReadLine;
+                //var moviesearch = (from movie in context.Movies where movie.Title.ToLower().Contains(searchmovie) select movie).FirstOrDefault();
+                
+
+
+                
+
+
+            }
+
+
+
         }
 
     }

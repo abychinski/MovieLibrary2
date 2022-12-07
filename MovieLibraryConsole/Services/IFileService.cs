@@ -15,5 +15,8 @@ namespace MovieLibraryConsole.Services
         void DeleteMovie();
         void AddUser();
 
+        void RateMovie();
+
+
     }
 }
